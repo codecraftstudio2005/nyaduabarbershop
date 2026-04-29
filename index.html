@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preload" as="image" href="Comphero.png" />
+        <link rel="preload" as="image" href="phonehero.webp" />
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
             rel="stylesheet"
         />
-        <title>Nyadua Hair Design & barbershop | Salga</title>
+        <title>Nyadua Hair Design & Barbershop | Salga</title>
         <style>
             * {
                 margin: 0;
@@ -406,6 +408,34 @@
         </style>
     </head>
     <body>
+        <u>
+            <img
+                style="
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                "
+                src="Comphero.png"
+                alt=""
+                loading="eager"
+                fetchpriority="high"
+            />
+            <img
+                style="
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                "
+                src="Phonehero.webp"
+                alt=""
+                loading="eager"
+                fetchpriority="high"
+            />
+        </u>
         <header>
             <a href="#home"><img src="icon.png" alt="Logo" /></a>
             <nav>
