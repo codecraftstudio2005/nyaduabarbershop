@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Premium Barber - Tamale</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+            }
+            section {
+                padding: 34px 45px;
+                margin-top: 45px;
+            }
+            body {
+                background: #0f0f0f;
+                color: #fff;
+                font-family: "Montserrat", sans-serif;
+            }
+            .btn {
+                background: gold;
+                border-radius: 8px 30px 8px 30px;
+                padding: 12px;
+            }
+
+            .btn:hover {
+                color: black;
+                background: white;
+            }
+            a {
+                font-weight: bolder;
+                text-decoration: none;
+                color: black;
+            }
+
+            /* HEADINGS (hero, sections, titles) */
+            h1,
+            h2,
+            h3 {
+                font-family: "Playfair Display", serif;
+                letter-spacing: 1px;
+            }
+
+            /* OPTIONAL: logo upgrade */
+            .logo,
+            .main-header h2 {
+                font-family: "Playfair Display", serif;
+                font-weight: 600;
+                letter-spacing: 2px;
+            }
+
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 43px;
+                background: #111;
+                padding: 15px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 1000;
+            }
+            header h1 {
+                font-size: 18px;
+            }
+            header a img {
+                margin-top: 5px;
+                width: 40px;
+            }
+            nav a {
+                color: #fff;
+                margin-left: 16px;
+                text-decoration: none;
+                font-size: 14px;
+            }
+            nav a:hover {
+                color: gold;
+            }
+            section {
+                padding: 80px 20px;
+                margin: auto;
+            }
+            .hero {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: url("Comphero.png") center/cover no-repeat;
+            }
+            @media (max-width: 600px) {
+                .hero {
+                    background: url("phonehero.webp") center/cover no-repeat;
+                }
+            }
+            @media (min-width: 601px) and (max-width: 767px) {
+                .hero {
+                    background: url("phonehero.webp") center/cover no-repeat;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1024px) {
+                .hero {
+                    background: url("Phonehero.webp") center/cover no-repeat;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1366px) {
+                .hero {
+                    background: url("Phonehero.webp") center/cover no-repeat;
+                    min-height: 92vh;
+                    padding: 40px;
+                }
+            }
+            @media (min-widthh: 10240px) {
+                .hero {
+                    background: url("Comphero.webp") center/cover no-repeat;
+                }
+            }
+            .hero h2 {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            /*=======  Collection Css  ========= */
+            /*================ */
+
+            .collection {
+                padding: 60px 20px;
+                background: #0f0f0f;
+            }
+
+            .collection h2 {
+                color: #f5b301;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .collection-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .collection-card {
+                background: #1a1a1a;
+                padding: 15px;
+                border-radius: 15px;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            .auto-slider {
+                display: flex;
+                width: max-content;
+                gap: 3px;
+                transform: translateZ(0);
+                will-change: transform;
+                animation: slideLoop 12s linear infinite;
+                animation-play-state: paused;
+                background: #1a1a1a;
+            }
+
+            .auto-slider img {
+                width: 210px;
+                height: 280px;
+                object-fit: cover;
+                flex-shrink: 0;
+                border-radius: 10px;
+                display: block;
+            }
+
+            .collection-card h3 {
+                margin-top: 10px;
+                font-size: 17px;
+            }
+
+            .card2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 23px;
+            }
+
+            @media (min-width: 768px) {
+                .collection-grid {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .auto-slider img {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                #collection {
+                    padding: 120px 230px;
+                    margin: 46px;
+                }
+
+                .auto-slider img {
+                    width: 330px;
+                    height: 450px;
+                }
+            }
+
+            @keyframes slideLoop {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+            .about,
+            .contact,
+            .why {
+                text-align: center;
+            }
+            .about {
+                text-align: center;
+                background: #0f0f0f;
+                color: #fff;
+            }
+
+            .about h2 {
+                color: #f5b301;
+                font-size: 26px;
+                margin-bottom: 20px;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            .about p {
+                max-width: 600px;
+                margin: auto;
+                font-size: 15px;
+                line-height: 1.7;
+                color: #f5f5f5;
+            }
+            .about-img img {
+                object-fit: cover;
+                width: 210px;
+                border-radius: 50px;
+            }
+            /* WHY SECTION */
+            .why {
+                padding: 70px 20px;
+                text-align: center;
+                background: linear-gradient(180deg, #0a0a0a, #111);
+            }
+
+            .why h2 {
+                color: gold;
+                margin-bottom: 35px;
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            /* SINGLE COLUMN LAYOUT */
+            .why-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            /* BIG CARDS */
+            .why-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 215, 0, 0.1);
+                padding: 25px;
+                border-radius: 16px;
+                color: #f5f5f5;
+                font-weight: bolder;
+                text-align: left;
+                font-family: Times New Roman;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            .why-card span {
+                margin-top: 12px;
+                width: 24px;
+            }
+
+            /* LEFT GOLD BAR ACCENT */
+            .why-card::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 4px;
+                background: gold;
+            }
+
+            /* HOVER EFFECT */
+            .why-card:hover {
+                transform: translateX(6px);
+                background: rgba(255, 215, 0, 0.07);
+                border: 1px solid rgba(255, 215, 0, 0.3);
+                color: gold;
+            }
+
+            /* TABLET */
+            @media (min-width: 768px) {
+                .why-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                    max-width: 900px;
+                }
+            }
+
+            /* DESKTOP / LARGE SCREENS */
+            @media (min-width: 1024px) {
+                .why-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    max-width: 1100px;
+                }
+
+                .why-card {
+                    font-size: 15px;
+                    padding: 28px;
+                }
+            }
+
+            /* EXTRA LARGE (big monitors) */
+            @media (min-width: 1280px) {
+                .why-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 25px;
+                    max-width: 1200px;
+                }
+            }
+            /* CONTACT */
+            #contact {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: #111;
+                color: #fff;
+                padding: 40px 20px;
+                text-align: center;
+                border-top: 3px solid #f5b301;
+            }
+
+            #contact h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+                color: #f5b301;
+            }
+            #contact p {
+                line-height: 1.7;
+            }
+
+            .contact-item {
+                margin: 12px 0;
+                font-size: 16px;
+            }
+
+            .contact-item i {
+                color: #f5b301;
+                margin-right: 10px;
+            }
+
+            footer {
+                background: #000;
+                color: #aaa;
+                text-align: center;
+                padding: 20px;
+                font-size: 14px;
+            }
+
+            footer p {
+                margin: 5px 0;
+            }
+
+            /* RESPONSIVE */
+            @media (max-width: 900px) {
+                .about-container {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="#home"><img src="icon.png" alt="Logo" /></a>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#collection">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+        <section id="home" class="hero">
+            <h1>Nyadua Hair Design & Barbershop.</h1>
+            <p>Clean cuts. Fresh fades. Sharp look.</p>
+            <p>Premium grooming experience in Salaga</p>
+            <a href="#contact" class="btn">Book Your Cut on WhatsApp</a>
+        </section>
+
+        <!---About Section Start --->
+        <section id="about" class="about">
+            <div class="about-img">
+                <img src="Aboutimg.jpeg" />
+            </div>
+            <h2>About Us</h2>
+
+            <p>
+                We do clean fades, neat line-ups, and simple haircuts that fit
+                you. Nothing complicated—just good, consistent cuts done right.
+                <br /><br />
+                You can come in for a quick trim or a fresh fade and expect to
+                leave looking sharp. We keep it clean, take our time, and make
+                sure you’re satisfied with your cut—right here in Tamale.
+            </p>
+            <br />
+            <br />
+            <h2>Why Choose Us</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <sub class="icon">
+                        <!-- crown -->
+                        <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 64 64"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <!-- crown base -->
+                            <rect
+                                x="14"
+                                y="38"
+                                width="36"
+                                height="8"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+
+                            <!-- crown points -->
+                            <path
+                                d="M14 38 L20 22 L28 34 L32 18 L36 34 L44 22 L50 38"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                                stroke-linejoin="round"
+                            />
+
+                            <!-- base line -->
+                            <line
+                                x1="14"
+                                y1="46"
+                                x2="50"
+                                y2="46"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                        </svg>
+                    </sub>
+                    Precision-crafted cuts with flawless execution
+                </div>
+                <div class="why-card">
+                    <sub class="icon">
+                        <!-- scissors -->
+                        <svg width="22" height="22" viewBox="0 0 64 64">
+                            <circle
+                                cx="22"
+                                cy="50"
+                                r="5"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <circle
+                                cx="42"
+                                cy="50"
+                                r="5"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="32"
+                                y1="30"
+                                x2="22"
+                                y2="50"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="32"
+                                y1="30"
+                                x2="42"
+                                y2="50"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <path fill="#FFD700" d="M32 30L12 10L14 8L32 28Z" />
+                            <path fill="#FFD700" d="M32 30L52 10L50 8L32 28Z" />
+                        </svg>
+                    </sub>
+                    Skilled barbers with refined technique
+                </div>
+
+                <div class="why-card">
+                    <sub class="icon">
+                        <!-- focus/target (detail-driven) -->
+                        <svg width="22" height="22" viewBox="0 0 64 64">
+                            <circle
+                                cx="32"
+                                cy="32"
+                                r="18"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <circle
+                                cx="32"
+                                cy="32"
+                                r="8"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <circle cx="32" cy="32" r="2" fill="#FFD700" />
+                        </svg>
+                    </sub>
+                    Detail-driven grooming experience
+                </div>
+
+                <div class="why-card">
+                    <sub class="icon">
+                        <!-- check / consistency -->
+                        <svg width="22" height="22" viewBox="0 0 64 64">
+                            <path
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="5"
+                                d="M12 34 L26 48 L52 18"
+                            />
+                        </svg>
+                    </sub>
+                    Consistent quality in every visit
+                </div>
+
+                <div class="why-card">
+                    <sub class="icon">
+                        <!-- style / comb -->
+                        <svg width="22" height="22" viewBox="0 0 64 64">
+                            <rect
+                                x="10"
+                                y="20"
+                                width="44"
+                                height="10"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="16"
+                                y1="30"
+                                x2="16"
+                                y2="48"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="24"
+                                y1="30"
+                                x2="24"
+                                y2="48"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="32"
+                                y1="30"
+                                x2="32"
+                                y2="48"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="40"
+                                y1="30"
+                                x2="40"
+                                y2="48"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <line
+                                x1="48"
+                                y1="30"
+                                x2="48"
+                                y2="48"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                        </svg>
+                    </sub>
+                    Modern styles tailored to your look
+                </div>
+
+                <div class="why-card">
+                    <sub style="margin-top: 40px" class="icon">
+                        <!-- money / value -->
+                        <svg width="22" height="22" viewBox="0 0 64 64">
+                            <circle
+                                cx="32"
+                                cy="32"
+                                r="20"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <text
+                                x="32"
+                                y="38"
+                                text-anchor="middle"
+                                font-size="18"
+                                fill="#FFD700"
+                            >
+                                $
+                            </text>
+                        </svg>
+                    </sub>
+                    Premium service at accessible pricing
+                </div>
+                <div class="why-card">
+                    <sub style="margin-top: 40px" class="icon">
+                        <svg
+                            width="23px"
+                            height="23px"
+                            viewBox="0 0 64 64"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <!-- Cap -->
+                            <rect
+                                x="24"
+                                y="6"
+                                width="16"
+                                height="6"
+                                fill="#FFD700"
+                            />
+
+                            <!-- Neck -->
+                            <rect
+                                x="26"
+                                y="12"
+                                width="12"
+                                height="6"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+
+                            <!-- Bottle body -->
+                            <path
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                                d="M22 18 L42 18 L44 24 L44 52 L20 52 L20 24 Z"
+                            />
+
+                            <!-- Label -->
+                            <rect
+                                x="24"
+                                y="28"
+                                width="16"
+                                height="10"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+
+                            <!-- Label lines -->
+                            <line
+                                x1="26"
+                                y1="32"
+                                x2="38"
+                                y2="32"
+                                stroke="#FFD700"
+                                stroke-width="2"
+                            />
+                            <line
+                                x1="26"
+                                y1="36"
+                                x2="38"
+                                y2="36"
+                                stroke="#FFD700"
+                                stroke-width="2"
+                            />
+                        </svg>
+                    </sub>
+                    We offer professional hair dye services for fresh, vibrant,
+                    and long-lasting color.
+                </div>
+                <div class="why-card">
+                    <sub style="margin-top: 40px" class="icon">
+                        <!-- home deals icon -->
+                        <svg width="22" height="22" viewBox="0 0 64 64">
+                            <path
+                                d="M12 28L32 10L52 28V54H12V28Z"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <rect
+                                x="28"
+                                y="38"
+                                width="8"
+                                height="16"
+                                fill="none"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                            <!-- small discount mark -->
+                            <line
+                                x1="20"
+                                y1="44"
+                                x2="44"
+                                y2="20"
+                                stroke="#FFD700"
+                                stroke-width="3"
+                            />
+                        </svg>
+                    </sub>
+
+                    Home Service/Deals (clean, simple, professional, works
+                    everywhere)
+                </div>
+            </div>
+        </section>
+        <!---About Section End --->
+
+        <!---Collection  Section --->
+        <section id="collection" class="collection">
+            <h2>Recent Work</h2>
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <div class="auto-slider">
+                        <img
+                            src="style1.jpg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="style2.jpeg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="style3.jpeg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="style4.jpg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="more8.jpeg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <!----Repeated Img---->
+                        <!----========---->
+                        <img
+                            src="style1.jpg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="style2.jpeg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="style3.jpeg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="style4.jpg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                        <img
+                            src="more8.jpeg"
+                            width="100%"
+                            height="300"
+                            loading="eager"
+                            decoding="async"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="card2">
+                <a class="btn" href="Styles.html">View More</a>
+            </div>
+        </section>
+        <!---Collection  Section End--->
+        <!---Contact  Section End--->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>
+                WhatsApp us to book an appointment, Schedule your perfect time
+                or request a home service. We’ll come to you and keep you
+                looking sharp wherever you are.
+                <br />
+                <br />
+                <a
+                    style="margin: 23px"
+                    class="btn"
+                    href="https://wa.me/233xxxxxxxxx"
+                    target="_blank"
+                    >Send Message</a
+                >
+            </p>
+            <br />
+
+            <p class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <sub
+                    ><svg
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                            fill="#FFD700"
+                            opacity="0.95"
+                        />
+                        <circle
+                            cx="12"
+                            cy="9"
+                            r="2.3"
+                            fill="#000000"
+                        /></svg></sub
+                >Opposite Unity Junction, Tamale – Northern Region, Ghana
+            </p>
+
+            <p class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <sub
+                    ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill="#FFD700"
+                            d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.4-2.4c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.3 20.5 3.5 13.7 3.5 5.5c0-.6.4-1 1-1H7.7c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"
+                        /></svg></sub
+                >+233 248 380 443
+            </p>
+
+            <p class="contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <sub
+                    ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill="#FFD700"
+                            d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.47 0 .1 5.37.1 11.98c0 2.11.55 4.16 1.6 5.98L0 24l6.21-1.63a11.9 11.9 0 0 0 5.86 1.5h.01c6.6 0 11.97-5.37 11.97-11.98 0-3.19-1.24-6.18-3.52-8.41z"
+                        />
+                        <path
+                            fill="#000000"
+                            d="M12.07 21.3c-1.86 0-3.68-.5-5.26-1.45l-.38-.23-3.69.97.99-3.6-.25-.37a9.8 9.8 0 0 1-1.52-5.24c0-5.41 4.41-9.82 9.83-9.82 2.62 0 5.08 1.02 6.93 2.87a9.74 9.74 0 0 1 2.89 6.95c0 5.41-4.41 9.82-9.83 9.82zm5.7-7.37c-.31-.15-1.83-.9-2.11-1-.28-.1-.48-.15-.68.15-.2.31-.78 1-.96 1.2-.18.2-.35.22-.66.08-.31-.15-1.3-.48-2.48-1.53-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.13-.63.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.39-.03-.54-.08-.15-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.8.39-.28.31-1.06 1.04-1.06 2.52s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.83-.75 2.09-1.47.26-.72.26-1.33.18-1.47-.08-.14-.28-.22-.59-.37z"
+                        /></svg
+                ></sub>
+                +233 248 380 443
+            </p>
+
+            <p class="contact-item">
+                <i class="fa-solid fa-clock"></i>
+                <sub style="margin-right: 7px"
+                    ><svg
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="#FFD700"
+                            stroke-width="2.5"
+                        />
+                        <path
+                            d="M12 7V12L15 13.5"
+                            stroke="
+                            #FFD700"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                        /></svg></sub
+                >Mon - Sat: 7:00 AM - 10:00 PM<br />Sun: 8:30 AM - 6:00 PM
+            </p>
+        </section>
+        <footer>
+            <p>© 2026 Nyadua Barber Shop. All Rights Reserved.</p>
+        </footer>
+        <script>
+            //*=======Auto slider=======*/
+            const sliders = document.querySelectorAll(".auto-slider");
+
+            sliders.forEach(slider => {
+                const images = slider.querySelectorAll("img");
+
+                let loaded = 0;
+                const total = images.length;
+
+                function start() {
+                    slider.style.animationPlayState = "running";
+                }
+
+                function check() {
+                    loaded++;
+                    if (loaded >= total) start();
+                }
+
+                images.forEach(img => {
+                    if (img.complete && img.naturalWidth > 0) {
+                        check();
+                    } else {
+                        img.addEventListener("load", check, { once: true });
+                        img.addEventListener("error", check, { once: true });
+                    }
+                });
+
+                setTimeout(start, 1500);
+            });
+        </script>
+    </body>
+</html>
